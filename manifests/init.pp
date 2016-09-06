@@ -54,22 +54,25 @@ class gnuuuser(
 
   exec { 'fetch_active_file':
     command => 'wget -o /var/lib/news/active http://www.gnuu.de/config/active',
+    path    => '/bin:/usr/bin',
     user    => 'news',
     creates => '/var/lib/news/active',
-    require => Package['inn'],
+    require => [Package['inn'], Package['wget']],
   }
 
   exec { 'fetch_newsgroups_file':
     command => 'wget -o /var/lib/news/newsgroups http://www.gnuu.de/config/newsgroups',
+    path    => '/bin:/usr/bin',
     user    => 'news',
     creates => '/var/lib/news/newsgroups',
-    require => Package['inn'],
+    require => [Package['inn'], Package['wget']],
   }
 
   exec { 'generate_history':
-    command => 'makedbz -i -f /var/lib/news/history',
+    command => '/usr/lib/news/bin/makedbz -i -f /var/lib/news/history',
     user    => 'news',
     creates => '/var/lib/news/history',
+    require => Package['inn'],
   }
 
 # uucp conf
