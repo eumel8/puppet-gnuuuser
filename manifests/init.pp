@@ -134,7 +134,7 @@ class gnuuuser(
 
   file {'/etc/postfix/tranport':
     ensure  => file,
-    content => template('gnuuuser/tranport.erb'),
+    content => template('gnuuuser/transport.erb'),
     require => Package['postfix'],
     notify  => Exec['postmap_transport'],
   }
