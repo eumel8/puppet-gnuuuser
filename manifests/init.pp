@@ -50,10 +50,11 @@ class gnuuuser(
   package {'exim':
    ensure   => absent,
   }
-  -> 
+  
   package {
     [ "vim","syslog-ng","openssh","inn","uucp","postfix","bsmtp","alpine","mailx","less","strace","perl-MIME-tools","wget","bind-utils","telnet","traceroute" ]:
-    ensure   => installed,
+    ensure    => installed,
+    subscribe => Package['exim'],
   }
 
   exec { 'fetch_active_file':
