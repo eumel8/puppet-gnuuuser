@@ -33,17 +33,17 @@ class gnuuuser(
   ) {
 
 
-  if ($::operatingsystemrelease == '13.2') {
-    file {'/etc/zypp/repos.d/Frank_13.2.repo':
+  if ($::operatingsystemrelease == '13.1') {
+    file {'/etc/zypp/repos.d/Frank_13.1.repo':
       ensure  => file,
-      source  => 'puppet:///modules/gnuuuser/Frank_13.2.repo'
+      source  => 'puppet:///modules/gnuuuser/Frank_13.1.repo'
     }
   } 
 
   if ($::operatingsystemrelease == '13.2') {
     file {'/etc/zypp/repos.d/Frank_13.2.repo':
       ensure  => file,
-      source  => 'puppet:///modules/gnuuuser/Frank_13.2.repo'
+      source  => 'puppet:///modules/gnuuuser/Frank_13.2.repo',
     }
   } 
 
@@ -55,21 +55,21 @@ class gnuuuser(
   exec { 'fetch_active_file':
     command => 'wget -o /var/lib/news/active http://www.gnuu.de/config/active',
     user    => 'news',
-    creates => '/var/lib/news/active'
+    creates => '/var/lib/news/active',
     require => Package['inn'],
   }
 
   exec { 'fetch_newsgroups_file':
     command => 'wget -o /var/lib/news/newsgroups http://www.gnuu.de/config/newsgroups',
     user    => 'news',
-    creates => '/var/lib/news/newsgroups'
+    creates => '/var/lib/news/newsgroups',
     require => Package['inn'],
   }
 
   exec { 'generate_history':
     command => 'makedbz -i -f /var/lib/news/history',
     user    => 'news',
-    creates => '/var/lib/news/history'
+    creates => '/var/lib/news/history',
   }
 
 # uucp conf
