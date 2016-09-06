@@ -1,0 +1,12 @@
+system uucp.gnuu.de
+time any
+called-login <%= @site %>
+call-login *
+call-password *
+port tcp
+protocol t
+commands rbsmtp rnews rgsmtp rcsmtp rsmtp rssmtp
+command-path /usr/bin /usr/lib/news/bin
+remote-send /var/spool/uucp/<%= @site %>
+remote-receive /var/spool/uucp/<%= @site %>
+

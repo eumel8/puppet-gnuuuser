@@ -1,0 +1,7 @@
+[Frank_13.1]
+name=Frank_13.1
+baseurl=http://download.opensuse.org/repositories/home:/eumel_8/openSUSE_13.1/
+type=rpm-md
+enabled=1
+autorefresh=1
+gpgcheck=0
