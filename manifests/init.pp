@@ -53,7 +53,7 @@ class gnuuuser(
   }
 
   exec { 'fetch_active_file':
-    command => 'wget -o /var/lib/news/active http://www.gnuu.de/config/active',
+    command => 'wget -O /var/lib/news/active http://www.gnuu.de/config/active',
     path    => '/bin:/usr/bin',
     user    => 'news',
     creates => '/var/lib/news/active',
@@ -61,7 +61,7 @@ class gnuuuser(
   }
 
   exec { 'fetch_newsgroups_file':
-    command => 'wget -o /var/lib/news/newsgroups http://www.gnuu.de/config/newsgroups',
+    command => 'wget -O /var/lib/news/newsgroups http://www.gnuu.de/config/newsgroups',
     path    => '/bin:/usr/bin',
     user    => 'news',
     creates => '/var/lib/news/newsgroups',
