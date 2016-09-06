@@ -56,7 +56,7 @@ class gnuuuser(
     command => 'wget -O /var/lib/news/active http://www.gnuu.de/config/active',
     path    => '/bin:/usr/bin',
     user    => 'news',
-    creates => '/var/lib/news/active',
+    creates => '/tmp/active',
     require => [Package['inn'], Package['wget']],
   }
 
@@ -64,7 +64,7 @@ class gnuuuser(
     command => 'wget -O /var/lib/news/newsgroups http://www.gnuu.de/config/newsgroups',
     path    => '/bin:/usr/bin',
     user    => 'news',
-    creates => '/var/lib/news/newsgroups',
+    creates => '/tmp/newsgroups',
     require => [Package['inn'], Package['wget']],
   }
 
