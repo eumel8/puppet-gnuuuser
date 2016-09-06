@@ -47,8 +47,12 @@ class gnuuuser(
     }
   } 
 
+  package {'postfix':
+    ensure   => present,
+  }
+  ->
   package {
-    [ "vim","syslog-ng","openssh","inn","uucp","postfix","bsmtp","alpine","mailx","less","strace","perl-MIME-tools","wget","bind-utils","telnet","traceroute" ]:
+    [ "vim","syslog-ng","openssh","inn","uucp","bsmtp","alpine","mailx","less","strace","perl-MIME-tools","wget","bind-utils","telnet","traceroute" ]:
     ensure  => installed,
   }
 
