@@ -114,6 +114,22 @@ class gnuuuser(
     notify  => Service['inn'],
   }
 
+  file {'/etc/news/newsfeeds':
+    ensure  => file,
+    owner   => 'news',
+    group   => 'news',
+    source  => 'puppet:///modules/gnuuuser/newsfeeds'
+    require => Package['inn'],
+  }
+
+  file {'/etc/news/readers.conf':
+    ensure  => file,
+    owner   => 'news',
+    group   => 'news',
+    source  => 'puppet:///modules/gnuuuser/readers.conf'
+    require => Package['inn'],
+  }
+
 # mail stuff
   service {'postfix':
     ensure   => running,
