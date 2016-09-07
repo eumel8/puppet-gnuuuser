@@ -1,0 +1,12 @@
+##  $Id: newsfeeds.in,v 1.14.2.3 2002/08/25 23:22:41 rra Exp $
+##
+ME:!*/!local,!collabra-internal::
+
+controlchan!\
+ 	:!*,control,control.*,!control.cancel\
+ 	:Tc,Wnsm:/usr/lib/news/bin/controlchan
+
+uucp.gnuu.de/uucp.gnuu.de\
+         :*,!junk,!local.*,!control.*\
+         :Tf,Wnb:uucp.gnuu.de
+
