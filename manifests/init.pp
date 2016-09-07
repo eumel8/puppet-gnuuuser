@@ -139,7 +139,7 @@ class gnuuuser(
     notify  => Service['postfix'],
   }
 
-  file {'/etc/postfix/tranport':
+  file {'/etc/postfix/transport':
     ensure  => file,
     content => template('gnuuuser/transport.erb'),
     require => Package['postfix'],
