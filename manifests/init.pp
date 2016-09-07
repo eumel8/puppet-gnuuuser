@@ -120,6 +120,7 @@ class gnuuuser(
     group   => 'news',
     source  => 'puppet:///modules/gnuuuser/newsfeeds',
     require => Package['inn'],
+    notify  => Service['inn'],
   }
 
   file {'/etc/news/readers.conf':
@@ -128,6 +129,16 @@ class gnuuuser(
     group   => 'news',
     source  => 'puppet:///modules/gnuuuser/readers.conf',
     require => Package['inn'],
+    notify  => Service['inn'],
+  }
+
+  file {'/etc/news/send-uucp.cf':
+    ensure  => file,
+    owner   => 'news',
+    group   => 'news',
+    source  => 'puppet:///modules/gnuuuser/send-uucp.cf',
+    require => Package['inn'],
+    notify  => Service['inn'],
   }
 
 # mail stuff
