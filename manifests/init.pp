@@ -118,7 +118,7 @@ class gnuuuser(
     ensure  => file,
     owner   => 'news',
     group   => 'news',
-    source  => 'puppet:///modules/gnuuuser/newsfeeds'
+    source  => 'puppet:///modules/gnuuuser/newsfeeds',
     require => Package['inn'],
   }
 
@@ -126,7 +126,7 @@ class gnuuuser(
     ensure  => file,
     owner   => 'news',
     group   => 'news',
-    source  => 'puppet:///modules/gnuuuser/readers.conf'
+    source  => 'puppet:///modules/gnuuuser/readers.conf',
     require => Package['inn'],
   }
 
