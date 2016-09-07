@@ -21,10 +21,6 @@
 #
 #
 
-#                             file {'/etc/nagios':
-#                                 ensure  => directory,
-#                                     force   => true,
-#
 #
 class gnuuuser(
   $repoversion = 'OpenSUSE_13.2',
@@ -166,4 +162,10 @@ class gnuuuser(
     refreshonly => true,
     notify      => Service['postfix'],
   }
+
+  file {'/root/.pinerc':
+    ensure  => file,
+    content => template('gnuuuser/pinerc.erb'),
+  }
+
 }
