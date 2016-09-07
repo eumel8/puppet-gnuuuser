@@ -1,6 +1,6 @@
 =======================================================================
   Willkommen bei GNUU-User - dem Operating System von GNUU e.V. 
-                                        powered by Puppet
+                                        powered by Puppet & LXD
   
   Mit diesem Module werden alle Softwarekomponenten fuer den Betrieb
   eines UUCP Nodes installiert und konfiguriert: Taylor-UUCP, BSMTP, 
@@ -11,12 +11,12 @@
 
 =======================================================================
 
-  Konfiguration  : /etc/uucp, /etc/news, /etc/postfix
-  Datenaustausch : uucico -s uucp.gnuu.de
-  Mails batchen  : batcher g-rgsmtp uucp.gnuu.de
-  News batchen   : su  news -c "send-uucp"'
+    Konfiguration  : /etc/uucp, /etc/news, /etc/postfix
+    Datenaustausch : uucico -s uucp.gnuu.de
+    Mails batchen  : batcher g-rgsmtp uucp.gnuu.de
+    News batchen   : su  news -c "send-uucp"'
 
-  Site konfigurieren: http://www.gnuu.de/cgi-bin/login.cgi
+    Site konfigurieren: http://www.gnuu.de/cgi-bin/login.cgi
 
 =======================================================================
 
