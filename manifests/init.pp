@@ -48,7 +48,7 @@ class gnuuuser(
   }
   ->
   package {
-    [ "vim","openssh","inn","uucp","bsmtp","alpine","mailx","less","strace","perl-MIME-tools","wget","bind-utils","telnet","traceroute" ]:
+    [ "vim","procmail","openssh","inn","uucp","bsmtp","alpine","mailx","less","strace","perl-MIME-tools","wget","bind-utils","telnet","traceroute" ]:
     ensure  => installed,
   }
 
